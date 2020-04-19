@@ -1,0 +1,21 @@
+version: "3"
+services:
+  worker-api:
+    image: worker-api
+    ports:
+      - "8080:8080"
+    networks:
+      - worker-mysql
+    depends_on:
+      - mysqldb
+ 
+  mysqldb:
+    image: mysql:8
+    networks:
+      - worker-mysql 
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=bootdb  
+
+networks:
+  worker-mysql: 
