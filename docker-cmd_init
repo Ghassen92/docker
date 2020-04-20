@@ -14,6 +14,6 @@ docker container logs -f 34
 
 sudo docker inspect a821b77a367a | grep '"IPAddress"' | head -n 1
 
-sudo docker run -u root --rm  -p 8080:8080 -p 50000:50000 -v /home/gasmi/jenkins/jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkins/jenkins
+sudo docker run -d -u root --rm  -p 8080:8080 -p 50000:50000 -v /home/gasmi/jenkins/jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkins/jenkins
 
 
